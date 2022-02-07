@@ -2,4 +2,6 @@ module github.com/agilize/camunda-client-go
 
 go 1.14
 
-require github.com/stretchr/testify v1.7.0
+require (
+	github.com/stretchr/testify v1.7.0
+)

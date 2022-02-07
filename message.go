@@ -7,9 +7,12 @@ type Message struct {
 
 // ReqMessage a request to send a message
 type ReqMessage struct {
-	MessageName      string               `json:"messageName"`
-	BusinessKey      string               `json:"businessKey"`
-	ProcessVariables *map[string]Variable `json:"processVariables,omitempty"`
+	MessageName       string               `json:"messageName"`
+	BusinessKey       string               `json:"businessKey"`
+	WithoutTenantId   string               `json:"withoutTenantId,omitempty"`
+	TenantId          string               `json:"tenantId,omitempty"`
+	ProcessInstanceId string               `json:"processInstanceId,omitempty"`
+	ProcessVariables  *map[string]Variable `json:"processVariables,omitempty"`
 }
 
 // SendMessage sends message to a process

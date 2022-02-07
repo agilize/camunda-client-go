@@ -6,7 +6,7 @@
 
 Installation
 -----------
-	go get github.com/citilinkru/camunda-client-go
+	go get github.com/agilize/camunda-client-go
 	
 Usage
 -----------

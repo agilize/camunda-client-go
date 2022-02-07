@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	client := camundaclientgo.NewClient(camundaclientgo.ClientOptions{
+	newClient := camundaclientgo.NewClient(camundaclientgo.ClientOptions{
 		EndpointUrl: "http://localhost:8080/engine-rest",
 		ApiUser:     "demo",
 		ApiPassword: "demo",
@@ -19,7 +19,7 @@ func main() {
 		CreatedAfter: time.Now().Add(-500 * time.Hour),
 	}
 
-	cnt, err := client.UserTask.GetListCount(&query)
+	cnt, err := newClient.UserTask.GetListCount(&query)
 	if err != nil {
 		fmt.Printf("Can't get task list count: %s", err)
 		os.Exit(1)
@@ -27,7 +27,7 @@ func main() {
 
 	fmt.Printf("total task count: %d\n", cnt)
 
-	tasks, err := client.UserTask.GetList(&query)
+	tasks, err := newClient.UserTask.GetList(&query)
 	if err != nil {
 		fmt.Printf("Can't get task list: %s", err)
 		os.Exit(1)
